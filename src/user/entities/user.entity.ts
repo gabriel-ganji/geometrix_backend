@@ -1,6 +1,6 @@
-import { IsEmail, IsNotEmpty, IsString } from "class-validator";
-import { Column, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
+@Entity()
 export class User {
 
     @PrimaryGeneratedColumn()
@@ -21,10 +21,10 @@ export class User {
     @Column({ default: true })
     active: boolean;
 
-    @Column()
+    @Column({ default: "" })
     phaseId: string;
 
-    @Column()
+    @Column({ default: "" })
     levelId: string;
 
     @CreateDateColumn()
