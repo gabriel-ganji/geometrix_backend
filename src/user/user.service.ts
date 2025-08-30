@@ -36,7 +36,7 @@ export class UserService {
 
         } catch (error) {
             if (error.code === '23505') {
-                throw new ConflictException('E-mail já está cadastrado.');
+                throw new ConflictException('Telefone ou e-mail já cadastrado.');
             }
             throw new Error(error.message);
         }
